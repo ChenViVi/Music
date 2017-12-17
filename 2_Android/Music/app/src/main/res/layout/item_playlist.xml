@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.chenyuwei.loadimageview.LoadImageView
+            android:id="@+id/ivImg"
+            android:layout_width="70dp"
+            android:layout_height="70dp" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp">
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_toLeftOf="@+id/tvMore"
+                android:layout_toStartOf="@+id/tvMore"
+                android:text="我喜欢"
+                android:textSize="18sp"
+                android:textColor="@color/textBlack"
+                android:maxLines="1"
+                android:ellipsize="end" />
+            <TextView
+                android:id="@+id/tvNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="15首"
+                android:textSize="15sp"
+                android:layout_alignParentBottom="true"/>
+            <ImageView
+                android:id="@+id/tvMore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/music_icn_more"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:padding="17dp"/>
+        </RelativeLayout>
+    </LinearLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/bgLine" />
+</LinearLayout>
