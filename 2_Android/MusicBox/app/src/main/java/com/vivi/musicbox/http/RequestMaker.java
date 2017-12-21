@@ -29,9 +29,9 @@ public abstract class RequestMaker<T extends BaseModel> {
             public void onResponse(Call<T> call, Response<T> response) {
                 if (response.isSuccessful() && response.errorBody() == null) {
                     if (response.body().getCode() == SUCCESS_CODE) {
-                        onSuccess(response.body());
                         Gson gson = new Gson();
-                        Log.d(TAG, mCall.request().url().encodedPath() + "=>"+"response=" + gson.toJson(response.body()));
+                        Log.d(TAG, mCall.request().url().encodedPath() + "=>"+"body=" + gson.toJson(response.body()));
+                        onSuccess(response.body());
                     } else {
                         Toast.makeText(mContext, response.body().getMsg(), Toast.LENGTH_LONG).show();
                         onFail(response.body().getCode(),response.body().getMsg());
@@ -45,7 +45,7 @@ public abstract class RequestMaker<T extends BaseModel> {
 
             @Override
             public void onFailure(Call<T> call, Throwable t) {
-                Log.d(TAG, "error:" + t.getMessage());
+                Log.e(TAG, mCall.request().url().encodedPath() + "=>" + "bug=" + t.getMessage());
                 Toast.makeText(mContext, "网络连接失败", Toast.LENGTH_LONG).show();
             }
         });

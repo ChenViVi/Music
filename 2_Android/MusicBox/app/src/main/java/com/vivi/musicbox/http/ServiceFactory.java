@@ -1,5 +1,7 @@
 package com.vivi.musicbox.http;
 
+import com.vivi.musicbox.http.service.LoginService;
+import com.vivi.musicbox.http.service.PlayListService;
 import com.vivi.musicbox.http.service.UserService;
 
 import retrofit2.Retrofit;
@@ -16,7 +18,15 @@ public class ServiceFactory {
             .addConverterFactory(GsonConverterFactory.create())
             .build();
 
+    public static LoginService getLoginService() {
+        return retrofit.create(LoginService.class);
+    }
+
     public static UserService getUserService() {
         return retrofit.create(UserService.class);
+    }
+
+    public static PlayListService getPlayListService() {
+        return retrofit.create(PlayListService.class);
     }
 }
