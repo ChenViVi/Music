@@ -8,16 +8,16 @@ import android.widget.Toast;
 
 import com.vivi.musicbox.http.RequestMaker;
 import com.vivi.musicbox.http.ServiceFactory;
-import com.vivi.musicbox.model.PlayListDetail;
-import com.vivi.musicbox.model.PlayListHighQuality;
-import com.vivi.musicbox.model.UserAccount;
-import com.vivi.musicbox.model.UserDetail;
-import com.vivi.musicbox.model.UserEvent;
-import com.vivi.musicbox.model.UserFolloweds;
-import com.vivi.musicbox.model.UserFollows;
-import com.vivi.musicbox.model.UserPlayList;
-import com.vivi.musicbox.model.UserRecord;
-import com.vivi.musicbox.model.UserSubCount;
+import com.vivi.musicbox.model.playlist.PlayListDetail;
+import com.vivi.musicbox.model.playlist.PlayListHighQuality;
+import com.vivi.musicbox.model.user.UserAccount;
+import com.vivi.musicbox.model.user.UserDetail;
+import com.vivi.musicbox.model.user.UserEvent;
+import com.vivi.musicbox.model.user.UserFolloweds;
+import com.vivi.musicbox.model.user.UserFollows;
+import com.vivi.musicbox.model.user.UserPlayList;
+import com.vivi.musicbox.model.user.UserRecord;
+import com.vivi.musicbox.model.user.UserSubCount;
 
 public class MainActivity extends AppCompatActivity {
 

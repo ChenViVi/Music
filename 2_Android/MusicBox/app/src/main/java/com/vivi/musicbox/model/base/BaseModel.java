@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * Created by vivi on 2016/9/17.
  */
-public class BaseModel<E> implements Serializable {
+public class BaseModel implements Serializable {
     private int code;
     private String msg;
 

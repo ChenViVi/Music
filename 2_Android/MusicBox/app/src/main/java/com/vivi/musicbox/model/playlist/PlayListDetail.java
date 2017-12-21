@@ -1,4 +1,4 @@
-package com.vivi.musicbox.model;
+package com.vivi.musicbox.model.playlist;
 
 import com.vivi.musicbox.model.base.BaseModel;
 

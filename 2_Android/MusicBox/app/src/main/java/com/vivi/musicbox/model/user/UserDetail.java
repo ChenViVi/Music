@@ -1,4 +1,4 @@
-package com.vivi.musicbox.model;
+package com.vivi.musicbox.model.user;
 
 import com.vivi.musicbox.model.base.BaseModel;
 
