@@ -35,7 +35,7 @@ public interface UserService {
      * 作用：获取用户歌单
      */
     @GET("user/playlist")
-    Call<UserPlayList> playlist(@Query("uid") String uid);
+    Call<UserPlayList> playlist(@Query("uid") int uid);
 
     /**
      * 作用：获取用户电台

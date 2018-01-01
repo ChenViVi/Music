@@ -4,6 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MusicBox.iml" filepath="$PROJECT_DIR$/MusicBox.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/base-material/base-material.iml" filepath="$PROJECT_DIR$/base-material/base-material.iml" />
+      <module fileurl="file://$PROJECT_DIR$/load-image-view/load-image-view.iml" filepath="$PROJECT_DIR$/load-image-view/load-image-view.iml" />
+      <module fileurl="file://$PROJECT_DIR$/super-recycler-view/super-recycler-view.iml" filepath="$PROJECT_DIR$/super-recycler-view/super-recycler-view.iml" />
     </modules>
   </component>
 </project>

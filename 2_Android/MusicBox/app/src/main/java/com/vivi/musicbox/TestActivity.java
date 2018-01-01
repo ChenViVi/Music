@@ -19,7 +19,7 @@ import com.vivi.musicbox.model.user.UserPlayList;
 import com.vivi.musicbox.model.user.UserRecord;
 import com.vivi.musicbox.model.user.UserSubCount;
 
-public class MainActivity extends AppCompatActivity {
+public class TestActivity extends AppCompatActivity {
 
     private String uid = "1317458286";
     private String phone = "15926099436";
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_test);
         new RequestMaker<UserAccount>(context, ServiceFactory.getLoginService().login(phone, password)){
 
             @Override
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
                 String uid = String.valueOf(userAccount.getAccount().getId());
                 userDetail(uid);
                 userSubCount(uid);
-                userPlayList(uid);
+                userPlayList(userAccount.getAccount().getId());
                 userFollows(uid, 2 ,0);
                 userFolloweds(uid, 2 ,0);
                 userEvent(uid);
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         };
     }
 
-    private void userPlayList(String uid){
+    private void userPlayList(int uid){
         new RequestMaker<UserPlayList>(context, ServiceFactory.getUserService().playlist(uid)){
             @Override
             protected void onSuccess(UserPlayList userPlayList) {
@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void fuck(){
-        Toast.makeText(MainActivity.this, "fuck", Toast.LENGTH_SHORT).show();
+        Toast.makeText(TestActivity.this, "fuck", Toast.LENGTH_SHORT).show();
         Log.e("fuck","fuck");
     }
 }
