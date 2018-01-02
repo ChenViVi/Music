@@ -10,11 +10,12 @@ import java.util.List;
 
 public class UserAccount extends BaseModel {
 
+
     /**
      * loginType : 1
-     * account : {"id":1317458286,"userName":"1_15926099436","type":1,"status":0,"whitelistAuthority":0,"createTime":1513839036003,"salt":"[B@284f9da3","tokenVersion":0,"ban":0,"baoyueVersion":0,"donateVersion":0,"vipType":0,"viptypeVersion":0,"anonimousUser":false}
-     * profile : {"backgroundUrl":"http://p1.music.126.net/2zSNIqTcpHL2jIvU6hG0EA==/109951162868128395.jpg","defaultAvatar":true,"avatarUrl":"http://p1.music.126.net/VnZiScyynLG7atLIZ2YPkw==/18686200114669622.jpg","gender":0,"birthday":-2209017600000,"city":210200,"userId":1317458286,"vipType":0,"accountStatus":0,"avatarImgId":18686200114669624,"experts":{},"nickname":"我任何人都不是","remarkName":null,"mutual":false,"province":210000,"expertTags":null,"authStatus":0,"backgroundImgId":109951162868128400,"userType":0,"description":"","avatarImgIdStr":"18686200114669622","backgroundImgIdStr":"109951162868128395","detailDescription":"","djStatus":0,"followed":false,"signature":"","authority":0,"avatarImgId_str":"18686200114669622"}
-     * bindings : [{"userId":1317458286,"url":"","tokenJsonStr":"{\"countrycode\":\"\",\"cellphone\":\"15926099436\",\"hasPassword\":true}","expired":false,"expiresIn":2147483647,"refreshTime":1513839036,"id":6508347690,"type":1}]
+     * account : {"id":44404168,"userName":"1_15004112829","type":1,"status":0,"whitelistAuthority":0,"createTime":0,"salt":"[B@58b7e652","tokenVersion":2,"ban":0,"baoyueVersion":1,"donateVersion":0,"vipType":11,"viptypeVersion":1507705884398,"anonimousUser":false}
+     * profile : {"avatarImgIdStr":"18623527953017203","backgroundImgIdStr":"3427177766293890","avatarImgId":18623527953017203,"experts":{},"expertTags":null,"authStatus":0,"backgroundImgId":3427177766293890,"userType":0,"backgroundUrl":"http://p1.music.126.net/cIJ5k63TUqPMjaslla0-uQ==/3427177766293890.jpg","detailDescription":"","djStatus":10,"followed":false,"vipType":11,"remarkName":null,"accountStatus":0,"nickname":"ViVi虚拟机","province":210000,"mutual":false,"userId":44404168,"description":"","defaultAvatar":false,"avatarUrl":"http://p1.music.126.net/ZnM8_KOrY5RgoPHN1bicfw==/18623527953017203.jpg","gender":0,"birthday":-2209017600000,"city":210200,"signature":"歌荒？不存在的","authority":0,"avatarImgId_str":"18623527953017203"}
+     * bindings : [{"expired":false,"refreshTime":1417073076,"expiresIn":2147483647,"url":"","tokenJsonStr":"{\"countrycode\":\"\",\"cellphone\":\"15004112829\",\"hasPassword\":true}","userId":44404168,"id":23222101,"type":1}]
      */
 
     private int loginType;
@@ -56,19 +57,19 @@ public class UserAccount extends BaseModel {
 
     public static class AccountBean {
         /**
-         * id : 1317458286
-         * userName : 1_15926099436
+         * id : 44404168
+         * userName : 1_15004112829
          * type : 1
          * status : 0
          * whitelistAuthority : 0
-         * createTime : 1513839036003
-         * salt : [B@284f9da3
-         * tokenVersion : 0
+         * createTime : 0
+         * salt : [B@58b7e652
+         * tokenVersion : 2
          * ban : 0
-         * baoyueVersion : 0
+         * baoyueVersion : 1
          * donateVersion : 0
-         * vipType : 0
-         * viptypeVersion : 0
+         * vipType : 11
+         * viptypeVersion : 1507705884398
          * anonimousUser : false
          */
 
@@ -84,7 +85,7 @@ public class UserAccount extends BaseModel {
         private int baoyueVersion;
         private int donateVersion;
         private int vipType;
-        private int viptypeVersion;
+        private long viptypeVersion;
         private boolean anonimousUser;
 
         public int getId() {
@@ -131,7 +132,7 @@ public class UserAccount extends BaseModel {
             return createTime;
         }
 
-        public void setCreateTime(long createTime) {
+        public void setCreateTime(int createTime) {
             this.createTime = createTime;
         }
 
@@ -183,11 +184,11 @@ public class UserAccount extends BaseModel {
             this.vipType = vipType;
         }
 
-        public int getViptypeVersion() {
+        public long getViptypeVersion() {
             return viptypeVersion;
         }
 
-        public void setViptypeVersion(int viptypeVersion) {
+        public void setViptypeVersion(long viptypeVersion) {
             this.viptypeVersion = viptypeVersion;
         }
 
@@ -202,64 +203,128 @@ public class UserAccount extends BaseModel {
 
     public static class ProfileBean {
         /**
-         * backgroundUrl : http://p1.music.126.net/2zSNIqTcpHL2jIvU6hG0EA==/109951162868128395.jpg
-         * defaultAvatar : true
-         * avatarUrl : http://p1.music.126.net/VnZiScyynLG7atLIZ2YPkw==/18686200114669622.jpg
+         * avatarImgIdStr : 18623527953017203
+         * backgroundImgIdStr : 3427177766293890
+         * avatarImgId : 18623527953017203
+         * experts : {}
+         * expertTags : null
+         * authStatus : 0
+         * backgroundImgId : 3427177766293890
+         * userType : 0
+         * backgroundUrl : http://p1.music.126.net/cIJ5k63TUqPMjaslla0-uQ==/3427177766293890.jpg
+         * detailDescription :
+         * djStatus : 10
+         * followed : false
+         * vipType : 11
+         * remarkName : null
+         * accountStatus : 0
+         * nickname : ViVi虚拟机
+         * province : 210000
+         * mutual : false
+         * userId : 44404168
+         * description :
+         * defaultAvatar : false
+         * avatarUrl : http://p1.music.126.net/ZnM8_KOrY5RgoPHN1bicfw==/18623527953017203.jpg
          * gender : 0
          * birthday : -2209017600000
          * city : 210200
-         * userId : 1317458286
-         * vipType : 0
-         * accountStatus : 0
-         * avatarImgId : 18686200114669624
-         * experts : {}
-         * nickname : 我任何人都不是
-         * remarkName : null
-         * mutual : false
-         * province : 210000
-         * expertTags : null
-         * authStatus : 0
-         * backgroundImgId : 109951162868128400
-         * userType : 0
-         * description :
-         * avatarImgIdStr : 18686200114669622
-         * backgroundImgIdStr : 109951162868128395
-         * detailDescription :
-         * djStatus : 0
-         * followed : false
-         * signature :
+         * signature : 歌荒？不存在的
          * authority : 0
-         * avatarImgId_str : 18686200114669622
+         * avatarImgId_str : 18623527953017203
          */
 
+        private String avatarImgIdStr;
+        private String backgroundImgIdStr;
+        private long avatarImgId;
+        private ExpertsBean experts;
+        private Object expertTags;
+        private int authStatus;
+        private long backgroundImgId;
+        private int userType;
         private String backgroundUrl;
+        private String detailDescription;
+        private int djStatus;
+        private boolean followed;
+        private int vipType;
+        private Object remarkName;
+        private int accountStatus;
+        private String nickname;
+        private int province;
+        private boolean mutual;
+        private int userId;
+        private String description;
         private boolean defaultAvatar;
         private String avatarUrl;
         private int gender;
         private long birthday;
         private int city;
-        private int userId;
-        private int vipType;
-        private int accountStatus;
-        private long avatarImgId;
-        private ExpertsBean experts;
-        private String nickname;
-        private Object remarkName;
-        private boolean mutual;
-        private int province;
-        private Object expertTags;
-        private int authStatus;
-        private long backgroundImgId;
-        private int userType;
-        private String description;
-        private String avatarImgIdStr;
-        private String backgroundImgIdStr;
-        private String detailDescription;
-        private int djStatus;
-        private boolean followed;
         private String signature;
         private int authority;
         private String avatarImgId_str;
+
+        public String getAvatarImgIdStr() {
+            return avatarImgIdStr;
+        }
+
+        public void setAvatarImgIdStr(String avatarImgIdStr) {
+            this.avatarImgIdStr = avatarImgIdStr;
+        }
+
+        public String getBackgroundImgIdStr() {
+            return backgroundImgIdStr;
+        }
+
+        public void setBackgroundImgIdStr(String backgroundImgIdStr) {
+            this.backgroundImgIdStr = backgroundImgIdStr;
+        }
+
+        public long getAvatarImgId() {
+            return avatarImgId;
+        }
+
+        public void setAvatarImgId(long avatarImgId) {
+            this.avatarImgId = avatarImgId;
+        }
+
+        public ExpertsBean getExperts() {
+            return experts;
+        }
+
+        public void setExperts(ExpertsBean experts) {
+            this.experts = experts;
+        }
+
+        public Object getExpertTags() {
+            return expertTags;
+        }
+
+        public void setExpertTags(Object expertTags) {
+            this.expertTags = expertTags;
+        }
+
+        public int getAuthStatus() {
+            return authStatus;
+        }
+
+        public void setAuthStatus(int authStatus) {
+            this.authStatus = authStatus;
+        }
+
+        public long getBackgroundImgId() {
+            return backgroundImgId;
+        }
+
+        public void setBackgroundImgId(long backgroundImgId) {
+            this.backgroundImgId = backgroundImgId;
+        }
+
+        public int getUserType() {
+            return userType;
+        }
+
+        public void setUserType(int userType) {
+            this.userType = userType;
+        }
 
         public String getBackgroundUrl() {
             return backgroundUrl;
@@ -267,6 +332,94 @@ public class UserAccount extends BaseModel {
 
         public void setBackgroundUrl(String backgroundUrl) {
             this.backgroundUrl = backgroundUrl;
+        }
+
+        public String getDetailDescription() {
+            return detailDescription;
+        }
+
+        public void setDetailDescription(String detailDescription) {
+            this.detailDescription = detailDescription;
+        }
+
+        public int getDjStatus() {
+            return djStatus;
+        }
+
+        public void setDjStatus(int djStatus) {
+            this.djStatus = djStatus;
+        }
+
+        public boolean isFollowed() {
+            return followed;
+        }
+
+        public void setFollowed(boolean followed) {
+            this.followed = followed;
+        }
+
+        public int getVipType() {
+            return vipType;
+        }
+
+        public void setVipType(int vipType) {
+            this.vipType = vipType;
+        }
+
+        public Object getRemarkName() {
+            return remarkName;
+        }
+
+        public void setRemarkName(Object remarkName) {
+            this.remarkName = remarkName;
+        }
+
+        public int getAccountStatus() {
+            return accountStatus;
+        }
+
+        public void setAccountStatus(int accountStatus) {
+            this.accountStatus = accountStatus;
+        }
+
+        public String getNickname() {
+            return nickname;
+        }
+
+        public void setNickname(String nickname) {
+            this.nickname = nickname;
+        }
+
+        public int getProvince() {
+            return province;
+        }
+
+        public void setProvince(int province) {
+            this.province = province;
+        }
+
+        public boolean isMutual() {
+            return mutual;
+        }
+
+        public void setMutual(boolean mutual) {
+            this.mutual = mutual;
+        }
+
+        public int getUserId() {
+            return userId;
+        }
+
+        public void setUserId(int userId) {
+            this.userId = userId;
+        }
+
+        public String getDescription() {
+            return description;
+        }
+
+        public void setDescription(String description) {
+            this.description = description;
         }
 
         public boolean isDefaultAvatar() {
@@ -309,158 +462,6 @@ public class UserAccount extends BaseModel {
             this.city = city;
         }
 
-        public int getUserId() {
-            return userId;
-        }
-
-        public void setUserId(int userId) {
-            this.userId = userId;
-        }
-
-        public int getVipType() {
-            return vipType;
-        }
-
-        public void setVipType(int vipType) {
-            this.vipType = vipType;
-        }
-
-        public int getAccountStatus() {
-            return accountStatus;
-        }
-
-        public void setAccountStatus(int accountStatus) {
-            this.accountStatus = accountStatus;
-        }
-
-        public long getAvatarImgId() {
-            return avatarImgId;
-        }
-
-        public void setAvatarImgId(long avatarImgId) {
-            this.avatarImgId = avatarImgId;
-        }
-
-        public ExpertsBean getExperts() {
-            return experts;
-        }
-
-        public void setExperts(ExpertsBean experts) {
-            this.experts = experts;
-        }
-
-        public String getNickname() {
-            return nickname;
-        }
-
-        public void setNickname(String nickname) {
-            this.nickname = nickname;
-        }
-
-        public Object getRemarkName() {
-            return remarkName;
-        }
-
-        public void setRemarkName(Object remarkName) {
-            this.remarkName = remarkName;
-        }
-
-        public boolean isMutual() {
-            return mutual;
-        }
-
-        public void setMutual(boolean mutual) {
-            this.mutual = mutual;
-        }
-
-        public int getProvince() {
-            return province;
-        }
-
-        public void setProvince(int province) {
-            this.province = province;
-        }
-
-        public Object getExpertTags() {
-            return expertTags;
-        }
-
-        public void setExpertTags(Object expertTags) {
-            this.expertTags = expertTags;
-        }
-
-        public int getAuthStatus() {
-            return authStatus;
-        }
-
-        public void setAuthStatus(int authStatus) {
-            this.authStatus = authStatus;
-        }
-
-        public long getBackgroundImgId() {
-            return backgroundImgId;
-        }
-
-        public void setBackgroundImgId(long backgroundImgId) {
-            this.backgroundImgId = backgroundImgId;
-        }
-
-        public int getUserType() {
-            return userType;
-        }
-
-        public void setUserType(int userType) {
-            this.userType = userType;
-        }
-
-        public String getDescription() {
-            return description;
-        }
-
-        public void setDescription(String description) {
-            this.description = description;
-        }
-
-        public String getAvatarImgIdStr() {
-            return avatarImgIdStr;
-        }
-
-        public void setAvatarImgIdStr(String avatarImgIdStr) {
-            this.avatarImgIdStr = avatarImgIdStr;
-        }
-
-        public String getBackgroundImgIdStr() {
-            return backgroundImgIdStr;
-        }
-
-        public void setBackgroundImgIdStr(String backgroundImgIdStr) {
-            this.backgroundImgIdStr = backgroundImgIdStr;
-        }
-
-        public String getDetailDescription() {
-            return detailDescription;
-        }
-
-        public void setDetailDescription(String detailDescription) {
-            this.detailDescription = detailDescription;
-        }
-
-        public int getDjStatus() {
-            return djStatus;
-        }
-
-        public void setDjStatus(int djStatus) {
-            this.djStatus = djStatus;
-        }
-
-        public boolean isFollowed() {
-            return followed;
-        }
-
-        public void setFollowed(boolean followed) {
-            this.followed = followed;
-        }
-
         public String getSignature() {
             return signature;
         }
@@ -491,31 +492,47 @@ public class UserAccount extends BaseModel {
 
     public static class BindingsBean {
         /**
-         * userId : 1317458286
-         * url :
-         * tokenJsonStr : {"countrycode":"","cellphone":"15926099436","hasPassword":true}
          * expired : false
+         * refreshTime : 1417073076
          * expiresIn : 2147483647
-         * refreshTime : 1513839036
-         * id : 6508347690
+         * url :
+         * tokenJsonStr : {"countrycode":"","cellphone":"15004112829","hasPassword":true}
+         * userId : 44404168
+         * id : 23222101
          * type : 1
          */
 
-        private int userId;
+        private boolean expired;
+        private int refreshTime;
+        private int expiresIn;
         private String url;
         private String tokenJsonStr;
-        private boolean expired;
-        private int expiresIn;
-        private int refreshTime;
-        private long id;
+        private int userId;
+        private int id;
         private int type;
 
-        public int getUserId() {
-            return userId;
+        public boolean isExpired() {
+            return expired;
         }
 
-        public void setUserId(int userId) {
-            this.userId = userId;
+        public void setExpired(boolean expired) {
+            this.expired = expired;
+        }
+
+        public int getRefreshTime() {
+            return refreshTime;
+        }
+
+        public void setRefreshTime(int refreshTime) {
+            this.refreshTime = refreshTime;
+        }
+
+        public int getExpiresIn() {
+            return expiresIn;
+        }
+
+        public void setExpiresIn(int expiresIn) {
+            this.expiresIn = expiresIn;
         }
 
         public String getUrl() {
@@ -534,35 +551,19 @@ public class UserAccount extends BaseModel {
             this.tokenJsonStr = tokenJsonStr;
         }
 
-        public boolean isExpired() {
-            return expired;
+        public int getUserId() {
+            return userId;
         }
 
-        public void setExpired(boolean expired) {
-            this.expired = expired;
+        public void setUserId(int userId) {
+            this.userId = userId;
         }
 
-        public int getExpiresIn() {
-            return expiresIn;
-        }
-
-        public void setExpiresIn(int expiresIn) {
-            this.expiresIn = expiresIn;
-        }
-
-        public int getRefreshTime() {
-            return refreshTime;
-        }
-
-        public void setRefreshTime(int refreshTime) {
-            this.refreshTime = refreshTime;
-        }
-
-        public long getId() {
+        public int getId() {
             return id;
         }
 
-        public void setId(long id) {
+        public void setId(int id) {
             this.id = id;
         }
 

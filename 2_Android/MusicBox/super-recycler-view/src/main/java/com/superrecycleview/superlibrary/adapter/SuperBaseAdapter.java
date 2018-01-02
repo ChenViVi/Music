@@ -40,7 +40,7 @@ public abstract class SuperBaseAdapter<T> extends RecyclerView.Adapter<BaseViewH
      * Base config
      */
     public List<T> mData;
-    private Activity activity;
+    protected Activity activity;
     private LayoutInflater mInflater;
 
     /**

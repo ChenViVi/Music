@@ -2,6 +2,8 @@ package com.chenyuwei.basematerial;
 
 import android.app.Activity;
 import android.app.Application;
+import android.content.Intent;
+import android.preference.PreferenceManager;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -33,5 +35,13 @@ public class BaseApplication extends Application{
     public void onLowMemory() {
         super.onLowMemory();
         System.gc();
+    }
+
+    protected void startActivity(Class<?> cls) {
+        startActivity(new Intent(this, cls));
+    }
+
+    public int getUid(){
+        return  PreferenceManager.getDefaultSharedPreferences(this).getInt("uid",-1);
     }
 }

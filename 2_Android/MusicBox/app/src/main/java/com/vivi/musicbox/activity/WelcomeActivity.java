@@ -12,6 +12,8 @@ import com.vivi.musicbox.R;
 
 public class WelcomeActivity extends BaseActivity implements View.OnClickListener{
 
+    public static WelcomeActivity instance = null;
+
     @Override
     protected int onBindView() {
         return R.layout.activity_welcome;
@@ -20,6 +22,11 @@ public class WelcomeActivity extends BaseActivity implements View.OnClickListene
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (getUid() != -1){
+            startActivity(MainActivity.class);
+            finish();
+        }
+        instance = this;
         findViewById(R.id.btnLogin);
     }
 

@@ -2,7 +2,10 @@ package com.chenyuwei.loadimageview;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
@@ -10,6 +13,7 @@ import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
 import com.bumptech.glide.request.target.ImageViewTarget;
+import com.bumptech.glide.request.target.SimpleTarget;
 
 import java.io.ByteArrayOutputStream;
 
@@ -23,8 +27,35 @@ public class ImageLoader {
     public ImageLoader() {
     }
 
-    public static void with(Context context, ImageView imageView, String url) {
-        Glide.with(context.getApplicationContext()).load(url).error((new Options()).getFailedRes()).into(imageView);
+    public static void with(Context context, final View view, String url) {
+        if (view instanceof ImageView){
+            Glide.with(context.getApplicationContext()).load(url).error((new Options()).getFailedRes()).into((ImageView)view);
+        }
+        else{
+            Glide.with(context)
+                    .load(url)
+                    .asBitmap()
+                    .into(new SimpleTarget<Bitmap>() {
+                        @Override
+                        public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
+                            Drawable drawable = new BitmapDrawable(resource);
+                            view.setBackgroundDrawable(drawable);
+                        }
+                    });
+        }
+    }
+
+    public static void with(Context context, final View view, String url, int width, int height) {
+        Glide.with(context)
+                .load(url)
+                .asBitmap()
+                .into(new SimpleTarget<Bitmap>(width, height) {
+                    @Override
+                    public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
+                        Drawable drawable = new BitmapDrawable(resource);
+                        view.setBackgroundDrawable(drawable);
+                    }
+                });
     }
 
     public static void with(Context context, ImageView imageView, int resourceId) {

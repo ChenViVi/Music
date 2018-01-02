@@ -60,8 +60,15 @@ public class LoginActivity extends BaseActivity implements TextWatcher {
                         protected void onSuccess(UserAccount userAccount) {
                             SharedPreferences.Editor editor = preferences.edit();
                             editor.putInt("uid",userAccount.getAccount().getId());
+                            editor.putString("name",userAccount.getProfile().getNickname());
+                            editor.putString("avatar",userAccount.getProfile().getAvatarUrl());
+                            editor.putString("background",userAccount.getProfile().getBackgroundUrl());
                             editor.apply();
                             startActivity(MainActivity.class);
+                            if (WelcomeActivity.instance != null){
+                                WelcomeActivity.instance.finish();
+                            }
+                            finish();
                         }
                     };
                 }
@@ -86,6 +93,14 @@ public class LoginActivity extends BaseActivity implements TextWatcher {
         }
         else {
             btnLogin.setBackgroundResource(R.drawable.btn_black);
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (WelcomeActivity.instance == null){
+            startActivity(WelcomeActivity.class);
         }
     }
 }
