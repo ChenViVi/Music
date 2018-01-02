@@ -1,5 +1,6 @@
 package com.vivi.musicbox.http;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.util.Log;
 import android.widget.Toast;

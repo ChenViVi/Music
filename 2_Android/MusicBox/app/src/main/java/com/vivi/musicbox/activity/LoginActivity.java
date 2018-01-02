@@ -59,7 +59,7 @@ public class LoginActivity extends BaseActivity implements TextWatcher {
                         @Override
                         protected void onSuccess(UserAccount userAccount) {
                             SharedPreferences.Editor editor = preferences.edit();
-                            editor.putInt("uid",userAccount.getAccount().getId());
+                            editor.putLong("uid",userAccount.getAccount().getId());
                             editor.putString("name",userAccount.getProfile().getNickname());
                             editor.putString("avatar",userAccount.getProfile().getAvatarUrl());
                             editor.putString("background",userAccount.getProfile().getBackgroundUrl());

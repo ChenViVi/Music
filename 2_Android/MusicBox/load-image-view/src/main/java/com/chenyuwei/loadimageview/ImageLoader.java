@@ -72,6 +72,7 @@ public class ImageLoader {
         Glide.with(context.getApplicationContext()).load(url).error((new Options()).getFailedRes()).into(new GlideDrawableImageViewTarget(imageView) {
             public void onStart() {
                 super.onStart();
+                imageView.setImageResource(new Options().getFailedRes());
                 listener.onStart();
             }
 
@@ -143,6 +144,7 @@ public class ImageLoader {
         GlideDrawableImageViewTarget target = new GlideDrawableImageViewTarget(imageView) {
             public void onStart() {
                 super.onStart();
+                imageView.setImageResource(R.drawable.img_default);
                 listener.onStart();
             }
 

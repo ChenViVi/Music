@@ -38,8 +38,8 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
 
     protected void onCreateView(){}
 
-    public int getUid(){
-        return preferences.getInt("uid",-1);
+    public long getUid(){
+        return preferences.getLong("uid",-1);
     }
 
     protected View findViewById(int id){

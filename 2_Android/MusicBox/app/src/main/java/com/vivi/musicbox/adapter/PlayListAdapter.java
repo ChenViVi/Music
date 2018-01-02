@@ -41,7 +41,6 @@ public class PlayListAdapter extends SuperBaseAdapter<UserPlayList.PlaylistBean>
         lp.height = Tool.getScreenWidth(activity) / 2;
         lp.width = Tool.getScreenWidth(activity) / 2;
         ivCover.setLayoutParams(lp);
-        ivCover.load(R.drawable.bg_music);
         int padding = Tool.dp2px(activity, 4);
         if (position % 2 == 0){
             itemView.setPadding(0,padding,padding,0);

@@ -35,7 +35,7 @@ public class TestActivity extends AppCompatActivity {
             @Override
             protected void onSuccess(UserAccount userAccount) {
                 String uid = String.valueOf(userAccount.getAccount().getId());
-                userDetail(uid);
+                /*userDetail(uid);
                 userSubCount(uid);
                 userPlayList(userAccount.getAccount().getId());
                 userFollows(uid, 2 ,0);
@@ -43,7 +43,7 @@ public class TestActivity extends AppCompatActivity {
                 userEvent(uid);
                 userRecord(uid, 0);
                 playListHighQuality(2, "日语");
-                playListDetail("2023423393");
+                playListDetail("2023423393");*/
             }
         };
     }

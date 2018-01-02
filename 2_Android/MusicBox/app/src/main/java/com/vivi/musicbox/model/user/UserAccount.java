@@ -12,23 +12,23 @@ public class UserAccount extends BaseModel {
 
 
     /**
-     * loginType : 1
+     * loglongype : 1
      * account : {"id":44404168,"userName":"1_15004112829","type":1,"status":0,"whitelistAuthority":0,"createTime":0,"salt":"[B@58b7e652","tokenVersion":2,"ban":0,"baoyueVersion":1,"donateVersion":0,"vipType":11,"viptypeVersion":1507705884398,"anonimousUser":false}
      * profile : {"avatarImgIdStr":"18623527953017203","backgroundImgIdStr":"3427177766293890","avatarImgId":18623527953017203,"experts":{},"expertTags":null,"authStatus":0,"backgroundImgId":3427177766293890,"userType":0,"backgroundUrl":"http://p1.music.126.net/cIJ5k63TUqPMjaslla0-uQ==/3427177766293890.jpg","detailDescription":"","djStatus":10,"followed":false,"vipType":11,"remarkName":null,"accountStatus":0,"nickname":"ViVi虚拟机","province":210000,"mutual":false,"userId":44404168,"description":"","defaultAvatar":false,"avatarUrl":"http://p1.music.126.net/ZnM8_KOrY5RgoPHN1bicfw==/18623527953017203.jpg","gender":0,"birthday":-2209017600000,"city":210200,"signature":"歌荒？不存在的","authority":0,"avatarImgId_str":"18623527953017203"}
      * bindings : [{"expired":false,"refreshTime":1417073076,"expiresIn":2147483647,"url":"","tokenJsonStr":"{\"countrycode\":\"\",\"cellphone\":\"15004112829\",\"hasPassword\":true}","userId":44404168,"id":23222101,"type":1}]
      */
 
-    private int loginType;
+    private long loglongype;
     private AccountBean account;
     private ProfileBean profile;
     private List<BindingsBean> bindings;
 
-    public int getLoginType() {
-        return loginType;
+    public long getLoglongype() {
+        return loglongype;
     }
 
-    public void setLoginType(int loginType) {
-        this.loginType = loginType;
+    public void setLoglongype(long loglongype) {
+        this.loglongype = loglongype;
     }
 
     public AccountBean getAccount() {
@@ -73,26 +73,26 @@ public class UserAccount extends BaseModel {
          * anonimousUser : false
          */
 
-        private int id;
+        private long id;
         private String userName;
-        private int type;
-        private int status;
-        private int whitelistAuthority;
+        private long type;
+        private long status;
+        private long whitelistAuthority;
         private long createTime;
         private String salt;
-        private int tokenVersion;
-        private int ban;
-        private int baoyueVersion;
-        private int donateVersion;
-        private int vipType;
+        private long tokenVersion;
+        private long ban;
+        private long baoyueVersion;
+        private long donateVersion;
+        private long vipType;
         private long viptypeVersion;
         private boolean anonimousUser;
 
-        public int getId() {
+        public long getId() {
             return id;
         }
 
-        public void setId(int id) {
+        public void setId(long id) {
             this.id = id;
         }
 
@@ -104,27 +104,27 @@ public class UserAccount extends BaseModel {
             this.userName = userName;
         }
 
-        public int getType() {
+        public long getType() {
             return type;
         }
 
-        public void setType(int type) {
+        public void setType(long type) {
             this.type = type;
         }
 
-        public int getStatus() {
+        public long getStatus() {
             return status;
         }
 
-        public void setStatus(int status) {
+        public void setStatus(long status) {
             this.status = status;
         }
 
-        public int getWhitelistAuthority() {
+        public long getWhitelistAuthority() {
             return whitelistAuthority;
         }
 
-        public void setWhitelistAuthority(int whitelistAuthority) {
+        public void setWhitelistAuthority(long whitelistAuthority) {
             this.whitelistAuthority = whitelistAuthority;
         }
 
@@ -132,7 +132,7 @@ public class UserAccount extends BaseModel {
             return createTime;
         }
 
-        public void setCreateTime(int createTime) {
+        public void setCreateTime(long createTime) {
             this.createTime = createTime;
         }
 
@@ -144,43 +144,43 @@ public class UserAccount extends BaseModel {
             this.salt = salt;
         }
 
-        public int getTokenVersion() {
+        public long getTokenVersion() {
             return tokenVersion;
         }
 
-        public void setTokenVersion(int tokenVersion) {
+        public void setTokenVersion(long tokenVersion) {
             this.tokenVersion = tokenVersion;
         }
 
-        public int getBan() {
+        public long getBan() {
             return ban;
         }
 
-        public void setBan(int ban) {
+        public void setBan(long ban) {
             this.ban = ban;
         }
 
-        public int getBaoyueVersion() {
+        public long getBaoyueVersion() {
             return baoyueVersion;
         }
 
-        public void setBaoyueVersion(int baoyueVersion) {
+        public void setBaoyueVersion(long baoyueVersion) {
             this.baoyueVersion = baoyueVersion;
         }
 
-        public int getDonateVersion() {
+        public long getDonateVersion() {
             return donateVersion;
         }
 
-        public void setDonateVersion(int donateVersion) {
+        public void setDonateVersion(long donateVersion) {
             this.donateVersion = donateVersion;
         }
 
-        public int getVipType() {
+        public long getVipType() {
             return vipType;
         }
 
-        public void setVipType(int vipType) {
+        public void setVipType(long vipType) {
             this.vipType = vipType;
         }
 
@@ -238,28 +238,28 @@ public class UserAccount extends BaseModel {
         private long avatarImgId;
         private ExpertsBean experts;
         private Object expertTags;
-        private int authStatus;
+        private long authStatus;
         private long backgroundImgId;
-        private int userType;
+        private long userType;
         private String backgroundUrl;
         private String detailDescription;
-        private int djStatus;
+        private long djStatus;
         private boolean followed;
-        private int vipType;
+        private long vipType;
         private Object remarkName;
-        private int accountStatus;
+        private long accountStatus;
         private String nickname;
-        private int province;
+        private long province;
         private boolean mutual;
-        private int userId;
+        private long userId;
         private String description;
         private boolean defaultAvatar;
         private String avatarUrl;
-        private int gender;
+        private long gender;
         private long birthday;
-        private int city;
+        private long city;
         private String signature;
-        private int authority;
+        private long authority;
         private String avatarImgId_str;
 
         public String getAvatarImgIdStr() {
@@ -302,11 +302,11 @@ public class UserAccount extends BaseModel {
             this.expertTags = expertTags;
         }
 
-        public int getAuthStatus() {
+        public long getAuthStatus() {
             return authStatus;
         }
 
-        public void setAuthStatus(int authStatus) {
+        public void setAuthStatus(long authStatus) {
             this.authStatus = authStatus;
         }
 
@@ -318,11 +318,11 @@ public class UserAccount extends BaseModel {
             this.backgroundImgId = backgroundImgId;
         }
 
-        public int getUserType() {
+        public long getUserType() {
             return userType;
         }
 
-        public void setUserType(int userType) {
+        public void setUserType(long userType) {
             this.userType = userType;
         }
 
@@ -342,11 +342,11 @@ public class UserAccount extends BaseModel {
             this.detailDescription = detailDescription;
         }
 
-        public int getDjStatus() {
+        public long getDjStatus() {
             return djStatus;
         }
 
-        public void setDjStatus(int djStatus) {
+        public void setDjStatus(long djStatus) {
             this.djStatus = djStatus;
         }
 
@@ -358,11 +358,11 @@ public class UserAccount extends BaseModel {
             this.followed = followed;
         }
 
-        public int getVipType() {
+        public long getVipType() {
             return vipType;
         }
 
-        public void setVipType(int vipType) {
+        public void setVipType(long vipType) {
             this.vipType = vipType;
         }
 
@@ -374,11 +374,11 @@ public class UserAccount extends BaseModel {
             this.remarkName = remarkName;
         }
 
-        public int getAccountStatus() {
+        public long getAccountStatus() {
             return accountStatus;
         }
 
-        public void setAccountStatus(int accountStatus) {
+        public void setAccountStatus(long accountStatus) {
             this.accountStatus = accountStatus;
         }
 
@@ -390,11 +390,11 @@ public class UserAccount extends BaseModel {
             this.nickname = nickname;
         }
 
-        public int getProvince() {
+        public long getProvince() {
             return province;
         }
 
-        public void setProvince(int province) {
+        public void setProvince(long province) {
             this.province = province;
         }
 
@@ -406,11 +406,11 @@ public class UserAccount extends BaseModel {
             this.mutual = mutual;
         }
 
-        public int getUserId() {
+        public long getUserId() {
             return userId;
         }
 
-        public void setUserId(int userId) {
+        public void setUserId(long userId) {
             this.userId = userId;
         }
 
@@ -438,11 +438,11 @@ public class UserAccount extends BaseModel {
             this.avatarUrl = avatarUrl;
         }
 
-        public int getGender() {
+        public long getGender() {
             return gender;
         }
 
-        public void setGender(int gender) {
+        public void setGender(long gender) {
             this.gender = gender;
         }
 
@@ -454,11 +454,11 @@ public class UserAccount extends BaseModel {
             this.birthday = birthday;
         }
 
-        public int getCity() {
+        public long getCity() {
             return city;
         }
 
-        public void setCity(int city) {
+        public void setCity(long city) {
             this.city = city;
         }
 
@@ -470,11 +470,11 @@ public class UserAccount extends BaseModel {
             this.signature = signature;
         }
 
-        public int getAuthority() {
+        public long getAuthority() {
             return authority;
         }
 
-        public void setAuthority(int authority) {
+        public void setAuthority(long authority) {
             this.authority = authority;
         }
 
@@ -503,13 +503,13 @@ public class UserAccount extends BaseModel {
          */
 
         private boolean expired;
-        private int refreshTime;
-        private int expiresIn;
+        private long refreshTime;
+        private long expiresIn;
         private String url;
         private String tokenJsonStr;
-        private int userId;
-        private int id;
-        private int type;
+        private long userId;
+        private long id;
+        private long type;
 
         public boolean isExpired() {
             return expired;
@@ -519,19 +519,19 @@ public class UserAccount extends BaseModel {
             this.expired = expired;
         }
 
-        public int getRefreshTime() {
+        public long getRefreshTime() {
             return refreshTime;
         }
 
-        public void setRefreshTime(int refreshTime) {
+        public void setRefreshTime(long refreshTime) {
             this.refreshTime = refreshTime;
         }
 
-        public int getExpiresIn() {
+        public long getExpiresIn() {
             return expiresIn;
         }
 
-        public void setExpiresIn(int expiresIn) {
+        public void setExpiresIn(long expiresIn) {
             this.expiresIn = expiresIn;
         }
 
@@ -551,27 +551,27 @@ public class UserAccount extends BaseModel {
             this.tokenJsonStr = tokenJsonStr;
         }
 
-        public int getUserId() {
+        public long getUserId() {
             return userId;
         }
 
-        public void setUserId(int userId) {
+        public void setUserId(long userId) {
             this.userId = userId;
         }
 
-        public int getId() {
+        public long getId() {
             return id;
         }
 
-        public void setId(int id) {
+        public void setId(long id) {
             this.id = id;
         }
 
-        public int getType() {
+        public long getType() {
             return type;
         }
 
-        public void setType(int type) {
+        public void setType(long type) {
             this.type = type;
         }
     }

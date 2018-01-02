@@ -52,7 +52,7 @@ public class DrawFragment extends BaseDrawerFragment {
         switch (v.getId()){
             case R.id.llLogout:
                 SharedPreferences.Editor editor = preferences.edit();
-                editor.putInt("uid", -1);
+                editor.putLong("uid", -1);
                 editor.apply();
                 startActivity(LoginActivity.class);
                 activity.finish();
