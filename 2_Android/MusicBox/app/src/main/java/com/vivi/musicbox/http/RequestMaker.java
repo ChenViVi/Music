@@ -5,6 +5,7 @@ import android.content.Context;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.chenyuwei.basematerial.view.dialog.WaitDialog;
 import com.google.gson.Gson;
 import com.vivi.musicbox.model.base.BaseModel;
 
@@ -22,6 +23,7 @@ public abstract class RequestMaker<T extends BaseModel> {
     private final String TAG = "response";
 
     public RequestMaker(Context context, Call<T> call) {
+        onStart();
         mCall = call;
         mContext = context;
         Log.d(TAG, mCall.request().url().encodedPath() + "=>"+"url=" + mCall.request().url().toString());
@@ -51,6 +53,8 @@ public abstract class RequestMaker<T extends BaseModel> {
             }
         });
     }
+
+    protected void onStart(){}
 
     protected abstract void onSuccess(T response);
 

@@ -3,13 +3,11 @@ package com.vivi.musicbox.adapter;
 import android.app.Activity;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 
+import com.chenyuwei.basematerial.adapter.BaseAdapter;
+import com.chenyuwei.basematerial.adapter.BaseViewHolder;
 import com.chenyuwei.basematerial.util.Tool;
 import com.chenyuwei.loadimageview.LoadImageView;
-import com.superrecycleview.superlibrary.adapter.BaseViewHolder;
-import com.superrecycleview.superlibrary.adapter.SuperBaseAdapter;
 
 import com.vivi.musicbox.R;
 import com.vivi.musicbox.model.user.UserPlayList;
@@ -20,17 +18,10 @@ import java.util.List;
  * Created by vivi on 2017/9/26.
  */
 
-public class PlayListAdapter extends SuperBaseAdapter<UserPlayList.PlaylistBean> {
+public class PlayListAdapter extends BaseAdapter<UserPlayList.PlaylistBean> {
 
-    private Listener listener;
-
-    public PlayListAdapter(Activity activity, List<UserPlayList.PlaylistBean> data, Listener listener) {
+    public PlayListAdapter(Activity activity, List<UserPlayList.PlaylistBean> data) {
         super(activity, data);
-        this.listener = listener;
-    }
-
-    public interface Listener{
-         public void  onclick(int position);
     }
 
     @Override
@@ -49,11 +40,12 @@ public class PlayListAdapter extends SuperBaseAdapter<UserPlayList.PlaylistBean>
             itemView.setPadding(0,padding,0,0);
         }
         holder.setImageURI(R.id.ivCover, item.getCoverImgUrl());
+        holder.setImageURI(R.id.ivCover, item.getCoverImgUrl(), R.drawable.bg_music);
         holder.setText(R.id.tvName, item.getName());
     }
 
     @Override
-    protected int getItemViewLayoutId(int position, UserPlayList.PlaylistBean item) {
+    protected int getItemViewLayoutId(int viewType) {
         return R.layout.item_playlist;
     }
 }

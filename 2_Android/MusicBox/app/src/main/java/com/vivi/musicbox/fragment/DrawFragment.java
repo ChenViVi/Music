@@ -16,6 +16,7 @@ import com.chenyuwei.basematerial.fragment.BaseDrawerFragment;
 import com.chenyuwei.basematerial.util.Tool;
 import com.chenyuwei.loadimageview.ImageLoader;
 import com.chenyuwei.loadimageview.LoadImageView;
+import com.chenyuwei.loadimageview.Options;
 import com.vivi.musicbox.R;
 import com.vivi.musicbox.activity.LoginActivity;
 
@@ -42,8 +43,12 @@ public class DrawFragment extends BaseDrawerFragment {
         ivAvatar = (LoadImageView) findViewById(R.id.ivAvatar);
         llHeader = (RelativeLayout) findViewById(R.id.llHeader);
         tvName.setText(preferences.getString("name",""));
-        ivAvatar.load(preferences.getString("avatar",""));
-        ImageLoader.with(activity, llHeader, preferences.getString("background", ""), Tool.dp2px(activity,360), Tool.dp2px(activity, 160));
+        ivAvatar.load(preferences.getString("avatar",""),
+                new Options.Builder()
+                        .setDefaultSrc(R.drawable.bg_avatar)
+                        .setShape(Options.Shape.CIRCLE)
+                        .build());
+        ImageLoader.with(activity, llHeader, preferences.getString("background", ""));
     }
 
     @Override

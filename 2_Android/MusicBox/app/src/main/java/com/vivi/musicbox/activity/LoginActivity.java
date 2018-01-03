@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.chenyuwei.basematerial.activity.BaseActivity;
+import com.chenyuwei.basematerial.view.dialog.WaitDialog;
 import com.vivi.musicbox.R;
 import com.vivi.musicbox.http.RequestMaker;
 import com.vivi.musicbox.http.ServiceFactory;
@@ -54,10 +55,14 @@ public class LoginActivity extends BaseActivity implements TextWatcher {
                     toast(R.string.tsPasswordMin);
                 }
                 else {
+                    btnLogin.setEnabled(false);
+                    final WaitDialog dialog = new WaitDialog(activity);
+                    dialog.show();
                     new RequestMaker<UserAccount>(activity, ServiceFactory.getLoginService().login(phone, password)){
 
                         @Override
                         protected void onSuccess(UserAccount userAccount) {
+                            dialog.dismiss();
                             SharedPreferences.Editor editor = preferences.edit();
                             editor.putLong("uid",userAccount.getAccount().getId());
                             editor.putString("name",userAccount.getProfile().getNickname());
@@ -69,6 +74,13 @@ public class LoginActivity extends BaseActivity implements TextWatcher {
                                 WelcomeActivity.instance.finish();
                             }
                             finish();
+                        }
+
+                        @Override
+                        protected void onFail(int code, String msg) {
+                            super.onFail(code, msg);
+                            dialog.dismiss();
+                            btnLogin.setEnabled(true);
                         }
                     };
                 }

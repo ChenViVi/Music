@@ -3,31 +3,26 @@ package com.chenyuwei.basematerial.fragment;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.chenyuwei.basematerial.R;
-import com.chenyuwei.basematerial.adapter.BaseRecyclerViewAdapter;
-import com.superrecycleview.superlibrary.adapter.SuperBaseAdapter;
-import com.superrecycleview.superlibrary.recycleview.SuperRecyclerView;
+import com.chenyuwei.basematerial.adapter.BaseAdapter;
+import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.listener.OnLoadmoreListener;
+import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by vivi on 2016/9/3.
  */
-public abstract class BaseRecyclerViewFragment<Item,Adapter extends SuperBaseAdapter> extends BaseFragment implements SuperRecyclerView.LoadingListener{
+public abstract class BaseRecyclerViewFragment<Item,Adapter extends BaseAdapter> extends BaseFragment implements OnRefreshListener, OnLoadmoreListener {
 
     protected ArrayList<Item> data = new ArrayList<>();
-    protected RelativeLayout llContent;
-    //protected View emptyView;
     private Adapter adapter;
-    private SuperRecyclerView recyclerView;
+    private RecyclerView recyclerView;
+    private RefreshLayout refreshLayout;
     private Toolbar toolbar;
     private TextView tvTitle;
 
@@ -45,8 +40,8 @@ public abstract class BaseRecyclerViewFragment<Item,Adapter extends SuperBaseAda
     @Override
     protected void onCreateView() {
         super.onCreateView();
-        llContent = (RelativeLayout) rootView.findViewById(R.id.llContent);
-        recyclerView = (SuperRecyclerView) findViewById(R.id.recyclerView);
+        refreshLayout = (RefreshLayout) findViewById(R.id.refreshLayout);
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         tvTitle = (TextView) findViewById(R.id.tvTitle);
         enableToolBar(false);
@@ -54,15 +49,25 @@ public abstract class BaseRecyclerViewFragment<Item,Adapter extends SuperBaseAda
         recyclerView.setAdapter(adapter);
         setPullLoadEnable(false);
         setPullRefreshEnable(false);
-        recyclerView.setLoadingListener(this);
-        clearItems();
-        adapter.setOnItemClickListener(new SuperBaseAdapter.OnItemClickListener() {
+        refreshLayout.setOnRefreshListener(this);
+        refreshLayout.setOnLoadmoreListener(this);
+        adapter.setOnItemClickListener(new BaseAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, Object item, int position) {
                 Item i = (Item) item;
                 BaseRecyclerViewFragment.this.onItemClick(view,  position,i);
             }
         });
+    }
+
+    @Override
+    public void onRefresh(RefreshLayout refreshlayout) {
+
+    }
+
+    @Override
+    public void onLoadMore(RefreshLayout refreshlayout) {
+
     }
 
     protected abstract RecyclerView.LayoutManager setLayoutManager();
@@ -85,31 +90,46 @@ public abstract class BaseRecyclerViewFragment<Item,Adapter extends SuperBaseAda
         setTitle(getResources().getString(titleId));
     }
 
-    @Override
-    public void onRefresh() {
-
+    protected void setPullLoadEnable(boolean enable) {
+        refreshLayout.setEnableLoadmore(enable);
     }
 
-    @Override
-    public void onLoadMore() {
-
+    protected void setPullRefreshEnable(boolean enable) {
+        refreshLayout.setEnableRefresh(enable);
     }
 
-    protected void setPullLoadEnable(boolean enable){
-        recyclerView.setLoadMoreEnabled(enable);
+    protected void stopRefresh() {
+        refreshLayout.finishRefresh();
     }
 
-    protected void setPullRefreshEnable(boolean enable){
-        recyclerView.setRefreshEnabled(enable);
+    protected void stopRefresh(int delay) {
+        refreshLayout.finishRefresh(delay);
     }
 
-    protected void stopRefresh(){
-        recyclerView.completeRefresh();
+    protected void stopRefresh(int delay, boolean isFinish) {
+        refreshLayout.finishRefresh(delay, isFinish);
     }
 
-    protected void stopLoadMore(){
-        recyclerView.completeLoadMore();
+    protected void stopRefresh(boolean isFinish) {
+        refreshLayout.finishRefresh(isFinish);
     }
+
+    protected void stopLoadMore() {
+        refreshLayout.finishLoadmore();
+    }
+
+    protected void stopLoadMore(int delay) {
+        refreshLayout.finishLoadmore(delay);
+    }
+
+    protected void stopLoadMore(int delay, boolean isFinish) {
+        refreshLayout.finishLoadmore(delay, isFinish);
+    }
+
+    protected void stopLoadMore(boolean isFinish) {
+        refreshLayout.finishLoadmore(isFinish);
+    }
+
 
     protected void notifyDataSetChanged(){
         adapter.notifyDataSetChanged();

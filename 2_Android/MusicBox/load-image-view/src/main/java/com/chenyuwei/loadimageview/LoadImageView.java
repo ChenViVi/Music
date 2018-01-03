@@ -26,7 +26,7 @@ public class LoadImageView extends ImageView implements ImageListener {
         super(context, attrs);
         this.context = context;
         TypedArray a = context.obtainStyledAttributes(attrs,R.styleable.LoadImageView);
-        options.setFailedRes(a.getResourceId(R.styleable.LoadImageView_failed_src,R.drawable.img_default));
+        options.setDefaultSrc(a.getResourceId(R.styleable.LoadImageView_failed_src,R.drawable.img_default));
         switch (a.getInt(R.styleable.LoadImageView_shape,-1)){
             case 0:
                 options.setShape(Options.Shape.DEFAULT);
@@ -119,7 +119,7 @@ public class LoadImageView extends ImageView implements ImageListener {
     }
 
     public void setDefaultImg(int failedRes) {
-        this.options.setFailedRes(failedRes);
+        this.options.setDefaultSrc(failedRes);
     }
 
     public void onStart() {

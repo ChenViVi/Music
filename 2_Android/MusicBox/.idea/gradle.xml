@@ -11,7 +11,8 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/base-material" />
             <option value="$PROJECT_DIR$/load-image-view" />
-            <option value="$PROJECT_DIR$/super-recycler-view" />
+            <option value="$PROJECT_DIR$/refresh-header" />
+            <option value="$PROJECT_DIR$/refresh-layout" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

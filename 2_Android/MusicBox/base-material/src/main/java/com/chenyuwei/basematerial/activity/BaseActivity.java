@@ -7,6 +7,7 @@ import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -76,7 +77,15 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     }
 
     protected void debug() {
-        Toast.makeText(activity, "debug", Toast.LENGTH_SHORT).show();
+        Log.e("debug","debug");
+    }
+
+    protected void debug(int i) {
+        Log.e("debug","debug " + i);
+    }
+
+    protected void debug(String s) {
+        Log.e("debug","debug " + s);
     }
 
     protected void startActivity(Class<?> cls) {

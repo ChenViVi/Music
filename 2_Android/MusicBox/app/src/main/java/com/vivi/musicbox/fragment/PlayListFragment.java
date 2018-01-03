@@ -1,12 +1,11 @@
 package com.vivi.musicbox.fragment;
 
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.chenyuwei.basematerial.fragment.BaseRecyclerViewFragment;
-import com.superrecycleview.superlibrary.adapter.SuperBaseAdapter;
+import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.vivi.musicbox.adapter.PlayListAdapter;
 import com.vivi.musicbox.http.RequestMaker;
 import com.vivi.musicbox.http.ServiceFactory;
@@ -15,7 +14,7 @@ import com.vivi.musicbox.model.user.UserPlayList;
 /**
  * Created by vivi on 2016/7/18.
  */
-public class PlayListFragment extends BaseRecyclerViewFragment<UserPlayList.PlaylistBean,SuperBaseAdapter> {
+public class PlayListFragment extends BaseRecyclerViewFragment<UserPlayList.PlaylistBean,PlayListAdapter> {
 
     @Override
     protected void onCreateView() {
@@ -37,8 +36,8 @@ public class PlayListFragment extends BaseRecyclerViewFragment<UserPlayList.Play
     }
 
     @Override
-    public void onRefresh() {
-        super.onRefresh();
+    public void onRefresh(RefreshLayout refreshlayout) {
+        super.onRefresh(refreshlayout);
         new RequestMaker<UserPlayList>(activity, ServiceFactory.getUserService().playlist(getUid())){
             @Override
             protected void onSuccess(UserPlayList userPlayList) {
@@ -50,7 +49,6 @@ public class PlayListFragment extends BaseRecyclerViewFragment<UserPlayList.Play
         };
     }
 
-
     @Override
     protected RecyclerView.LayoutManager setLayoutManager() {
         return new GridLayoutManager(activity,2);
@@ -58,12 +56,6 @@ public class PlayListFragment extends BaseRecyclerViewFragment<UserPlayList.Play
 
     @Override
     protected PlayListAdapter setAdapter() {
-        return new PlayListAdapter(activity, data, new PlayListAdapter.Listener() {
-            @Override
-            public void onclick(int position) {
-                data.remove(position);
-                notifyDataSetChanged();
-            }
-        });
+        return new PlayListAdapter(activity, data);
     }
 }
