@@ -92,6 +92,10 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         startActivity(new Intent(activity, cls));
     }
 
+    protected void startActivityForResult(Class<?> cls, int requestCode) {
+        startActivityForResult(new Intent(activity, cls), requestCode);
+    }
+
     public View findViewById(int id) {
         View view = rootView.findViewById(id);
         if (!(rootView.findViewById(id) instanceof AdapterView)) {

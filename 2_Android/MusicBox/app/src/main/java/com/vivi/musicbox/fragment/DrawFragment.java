@@ -1,24 +1,15 @@
 package com.vivi.musicbox.fragment;
 
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.animation.GlideAnimation;
-import com.bumptech.glide.request.target.SimpleTarget;
 import com.chenyuwei.basematerial.fragment.BaseDrawerFragment;
-import com.chenyuwei.basematerial.util.Tool;
 import com.chenyuwei.loadimageview.ImageLoader;
 import com.chenyuwei.loadimageview.LoadImageView;
-import com.chenyuwei.loadimageview.Options;
 import com.vivi.musicbox.R;
-import com.vivi.musicbox.activity.LoginActivity;
+import com.vivi.musicbox.activity.WelcomeActivity;
 
 
 /**
@@ -43,11 +34,7 @@ public class DrawFragment extends BaseDrawerFragment {
         ivAvatar = (LoadImageView) findViewById(R.id.ivAvatar);
         llHeader = (RelativeLayout) findViewById(R.id.llHeader);
         tvName.setText(preferences.getString("name",""));
-        ivAvatar.load(preferences.getString("avatar",""),
-                new Options.Builder()
-                        .setDefaultSrc(R.drawable.bg_avatar)
-                        .setShape(Options.Shape.CIRCLE)
-                        .build());
+        ivAvatar.setDefaultSrc(R.drawable.bg_avatar).load(preferences.getString("avatar",""));
         ImageLoader.with(activity, llHeader, preferences.getString("background", ""));
     }
 
@@ -59,7 +46,7 @@ public class DrawFragment extends BaseDrawerFragment {
                 SharedPreferences.Editor editor = preferences.edit();
                 editor.putLong("uid", -1);
                 editor.apply();
-                startActivity(LoginActivity.class);
+                startActivity(WelcomeActivity.class);
                 activity.finish();
                 break;
         }

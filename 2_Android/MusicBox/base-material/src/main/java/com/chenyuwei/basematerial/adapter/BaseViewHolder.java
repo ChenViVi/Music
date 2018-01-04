@@ -54,9 +54,7 @@ public class BaseViewHolder extends RecyclerView.ViewHolder {
 
     public BaseViewHolder setImageURI(int viewId, String uri, int defaultSrc) {
         LoadImageView view = getView(viewId);
-        view.load(uri, new Options.Builder()
-                .setDefaultSrc(defaultSrc)
-                .build());
+        view.setDefaultSrc(defaultSrc).load(uri);
         return this;
     }
 

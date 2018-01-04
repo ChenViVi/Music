@@ -17,6 +17,12 @@ import com.vivi.musicbox.http.RequestMaker;
 import com.vivi.musicbox.http.ServiceFactory;
 import com.vivi.musicbox.model.user.UserAccount;
 
+import java.util.concurrent.TimeUnit;
+
+import io.reactivex.Observable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.functions.Consumer;
+
 public class LoginActivity extends BaseActivity implements TextWatcher {
 
     protected Toolbar toolbar;
@@ -61,19 +67,24 @@ public class LoginActivity extends BaseActivity implements TextWatcher {
                     new RequestMaker<UserAccount>(activity, ServiceFactory.getLoginService().login(phone, password)){
 
                         @Override
-                        protected void onSuccess(UserAccount userAccount) {
-                            dialog.dismiss();
-                            SharedPreferences.Editor editor = preferences.edit();
-                            editor.putLong("uid",userAccount.getAccount().getId());
-                            editor.putString("name",userAccount.getProfile().getNickname());
-                            editor.putString("avatar",userAccount.getProfile().getAvatarUrl());
-                            editor.putString("background",userAccount.getProfile().getBackgroundUrl());
-                            editor.apply();
-                            startActivity(MainActivity.class);
-                            if (WelcomeActivity.instance != null){
-                                WelcomeActivity.instance.finish();
-                            }
-                            finish();
+                        protected void onSuccess(final UserAccount userAccount) {
+                            Observable.timer(1, TimeUnit.SECONDS)
+                                    .observeOn(AndroidSchedulers.mainThread())
+                                    .subscribe(new Consumer<Long>() {
+                                        @Override
+                                        public void accept(Long aLong) throws Exception {
+                                            dialog.dismiss();
+                                            SharedPreferences.Editor editor = preferences.edit();
+                                            editor.putLong("uid",userAccount.getAccount().getId());
+                                            editor.putString("name",userAccount.getProfile().getNickname());
+                                            editor.putString("avatar",userAccount.getProfile().getAvatarUrl());
+                                            editor.putString("background",userAccount.getProfile().getBackgroundUrl());
+                                            editor.apply();
+                                            startActivity(MainActivity.class);
+                                            setResult(WelcomeActivity.RESULT_DESTROY);
+                                            finish();
+                                        }
+                                    }) ;
                         }
 
                         @Override
@@ -105,14 +116,6 @@ public class LoginActivity extends BaseActivity implements TextWatcher {
         }
         else {
             btnLogin.setBackgroundResource(R.drawable.btn_black);
-        }
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        if (WelcomeActivity.instance == null){
-            startActivity(WelcomeActivity.class);
         }
     }
 }

@@ -4,7 +4,8 @@
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context="com.vivi.musicbox.activity.LoginActivity">
+    tools:context="com.vivi.musicbox.activity.LoginActivity"
+    android:background="@color/colorPrimary">
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar" />
@@ -16,7 +17,7 @@
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-                <AutoCompleteTextView
+                <EditText
                     android:id="@+id/etPhone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -25,6 +26,7 @@
                     android:maxLines="1"
                     android:minLines="1"
                     android:maxLength="11"
+                    android:textColor="@color/tvWhite"
                     android:text="15926099436"/>
             </android.support.design.widget.TextInputLayout>
             <android.support.design.widget.TextInputLayout
@@ -42,6 +44,7 @@
                     android:inputType="textPassword"
                     android:maxLines="1"
                     android:minLines="1"
+                    android:textColor="@color/tvWhite"
                     android:text="qpb110120"/>
             </android.support.design.widget.TextInputLayout>
             <Button
@@ -50,7 +53,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="@string/btnLogin"
-                android:background="@drawable/btn_black_disable"
+                android:background="@drawable/btn_transparent"
                 android:textColor="@color/textWhite"/>
         </LinearLayout>
 </LinearLayout>

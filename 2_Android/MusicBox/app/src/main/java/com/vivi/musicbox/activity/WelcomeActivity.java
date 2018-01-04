@@ -2,17 +2,16 @@ package com.vivi.musicbox.activity;
 
 import android.content.Intent;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 
 import com.chenyuwei.basematerial.activity.BaseActivity;
 import com.vivi.musicbox.R;
 
 public class WelcomeActivity extends BaseActivity implements View.OnClickListener{
 
-    public static WelcomeActivity instance = null;
+    public static final int REQUEST_DESTROY = 101;
+    public static final int RESULT_DESTROY = 101;
 
     @Override
     protected int onBindView() {
@@ -26,12 +25,19 @@ public class WelcomeActivity extends BaseActivity implements View.OnClickListene
             startActivity(MainActivity.class);
             finish();
         }
-        instance = this;
         findViewById(R.id.btnLogin);
     }
 
     @Override
     public void onClick(View view) {
-        startActivity(new Intent(this, LoginActivity.class));
+        startActivityForResult(LoginActivity.class, REQUEST_DESTROY);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == REQUEST_DESTROY && resultCode == RESULT_DESTROY) {
+            finish();
+        }
     }
 }

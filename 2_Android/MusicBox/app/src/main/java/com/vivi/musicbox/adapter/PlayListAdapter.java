@@ -34,10 +34,10 @@ public class PlayListAdapter extends BaseAdapter<UserPlayList.PlaylistBean> {
         ivCover.setLayoutParams(lp);
         int padding = Tool.dp2px(activity, 4);
         if (position % 2 == 0){
-            itemView.setPadding(0,padding,padding,0);
+            itemView.setPadding(0, padding, padding,0);
         }
         else {
-            itemView.setPadding(0,padding,0,0);
+            itemView.setPadding(0, padding, 0, 0);
         }
         holder.setImageURI(R.id.ivCover, item.getCoverImgUrl());
         holder.setImageURI(R.id.ivCover, item.getCoverImgUrl(), R.drawable.bg_music);

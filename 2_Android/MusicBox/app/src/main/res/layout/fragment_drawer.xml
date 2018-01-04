@@ -10,8 +10,8 @@
         android:layout_height="wrap_content">
         <com.chenyuwei.loadimageview.LoadImageView
             android:id="@+id/ivAvatar"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="40dp"
             app:shape="circle" />
@@ -22,7 +22,7 @@
             android:text="334432424"
             android:layout_centerHorizontal="true"
             android:layout_below="@+id/ivAvatar"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             android:textColor="@color/textWhite"/>
     </RelativeLayout>
