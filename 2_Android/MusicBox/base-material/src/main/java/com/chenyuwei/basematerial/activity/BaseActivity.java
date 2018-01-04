@@ -2,6 +2,7 @@ package com.chenyuwei.basematerial.activity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
@@ -35,6 +36,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         rootView = View.inflate(activity, onBindView(), null);
         setContentView(rootView);
         preferences = PreferenceManager.getDefaultSharedPreferences(activity);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
 
     protected void setSupportActionBar(int id) {

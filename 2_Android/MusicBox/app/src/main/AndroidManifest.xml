@@ -25,5 +25,4 @@
             android:label="@string/ttLogin" />
         <activity android:name=".activity.MainActivity"></activity>
     </application>
-
 </manifest>
