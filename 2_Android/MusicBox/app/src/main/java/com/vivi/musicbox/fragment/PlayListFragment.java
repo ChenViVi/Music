@@ -1,11 +1,14 @@
 package com.vivi.musicbox.fragment;
 
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.chenyuwei.basematerial.fragment.BaseRecyclerViewFragment;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.vivi.musicbox.activity.PlayListDetailActivity;
 import com.vivi.musicbox.adapter.PlayListAdapter;
 import com.vivi.musicbox.http.RequestMaker;
 import com.vivi.musicbox.http.ServiceFactory;
@@ -33,6 +36,11 @@ public class PlayListFragment extends BaseRecyclerViewFragment<UserPlayList.Play
     @Override
     protected void onItemClick(View view, int position, UserPlayList.PlaylistBean playList) {
         super.onItemClick(view, position, playList);
+        Intent intent = new Intent(activity, PlayListDetailActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("playlist", playList);
+        intent.putExtras(bundle);
+        startActivity(intent);
     }
 
     @Override

@@ -24,5 +24,7 @@
             android:launchMode="singleTask"
             android:label="@string/ttLogin" />
         <activity android:name=".activity.MainActivity"></activity>
+        <activity android:name=".activity.PlayListActivity"></activity>
+        <activity android:name=".activity.PlayListDetailActivity"></activity>
     </application>
 </manifest>

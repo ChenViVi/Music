@@ -2,13 +2,14 @@ package com.vivi.musicbox.model.user;
 
 import com.vivi.musicbox.model.base.BaseModel;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by p_yuweichen on 2017/12/21.
  */
 
-public class UserPlayList extends BaseModel {
+public class UserPlayList extends BaseModel implements Serializable {
     /**
      * more : false
      * playlist : [{"subscribers":[],"subscribed":false,"creator":{"defaultAvatar":true,"province":210000,"authStatus":0,"followed":false,"avatarUrl":"http://p1.music.126.net/VnZiScyynLG7atLIZ2YPkw==/18686200114669622.jpg","accountStatus":0,"gender":0,"city":210200,"birthday":-2209017600000,"userId":1317458286,"userType":0,"nickname":"我任何人都不是","signature":"","description":"","detailDescription":"","avatarImgId":18686200114669624,"backgroundImgId":109951162868128400,"backgroundUrl":"http://p1.music.126.net/2zSNIqTcpHL2jIvU6hG0EA==/109951162868128395.jpg","authority":0,"mutual":false,"expertTags":null,"experts":null,"djStatus":0,"vipType":0,"remarkName":null,"avatarImgIdStr":"18686200114669622","backgroundImgIdStr":"109951162868128395","avatarImgId_str":"18686200114669622"},"artists":null,"tracks":null,"ordered":false,"tags":[],"adType":0,"trackNumberUpdateTime":1513839634576,"subscribedCount":0,"cloudTrackCount":1,"description":null,"status":0,"userId":1317458286,"privacy":0,"newImported":false,"trackCount":2,"playCount":0,"coverImgUrl":"http://p1.music.126.net/JpBJUNOXqGtVxRUxF5Y0eg==/3422779698817209.jpg","trackUpdateTime":1513839634576,"coverImgId":3422779698817209,"createTime":1513839151074,"updateTime":1513839634576,"specialType":5,"anonimous":false,"commentThreadId":"A_PL_0_2023423393","totalDuration":0,"highQuality":false,"name":"我任何人都不是喜欢的音乐","id":2023423393},{"subscribers":[],"subscribed":false,"creator":{"defaultAvatar":true,"province":210000,"authStatus":0,"followed":false,"avatarUrl":"http://p1.music.126.net/VnZiScyynLG7atLIZ2YPkw==/18686200114669622.jpg","accountStatus":0,"gender":0,"city":210200,"birthday":-2209017600000,"userId":1317458286,"userType":0,"nickname":"我任何人都不是","signature":"","description":"","detailDescription":"","avatarImgId":18686200114669624,"backgroundImgId":109951162868128400,"backgroundUrl":"http://p1.music.126.net/2zSNIqTcpHL2jIvU6hG0EA==/109951162868128395.jpg","authority":0,"mutual":false,"expertTags":null,"experts":null,"djStatus":0,"vipType":0,"remarkName":null,"avatarImgIdStr":"18686200114669622","backgroundImgIdStr":"109951162868128395","avatarImgId_str":"18686200114669622"},"artists":null,"tracks":null,"ordered":false,"tags":[],"adType":0,"trackNumberUpdateTime":1513839587071,"subscribedCount":0,"cloudTrackCount":0,"description":null,"status":0,"userId":1317458286,"privacy":0,"newImported":false,"trackCount":1,"playCount":0,"coverImgUrl":"http://p1.music.126.net/EOJK7dx4E9CkYxgrdSuuLw==/17756013277390221.jpg","trackUpdateTime":1513839587135,"coverImgId":17756013277390220,"createTime":1513839543318,"updateTime":1513839587071,"specialType":0,"anonimous":false,"commentThreadId":"A_PL_0_2023422484","totalDuration":0,"highQuality":false,"name":"歌单","id":2023422484,"coverImgId_str":"17756013277390221"}]
@@ -33,7 +34,7 @@ public class UserPlayList extends BaseModel {
         this.playlist = playlist;
     }
 
-    public static class PlaylistBean {
+    public static class PlaylistBean implements Serializable{
         /**
          * subscribers : []
          * subscribed : false
@@ -95,7 +96,7 @@ public class UserPlayList extends BaseModel {
         private int totalDuration;
         private boolean highQuality;
         private String name;
-        private int id;
+        private long id;
         private String coverImgId_str;
         private List<?> subscribers;
         private List<?> tags;
@@ -316,7 +317,7 @@ public class UserPlayList extends BaseModel {
             this.name = name;
         }
 
-        public int getId() {
+        public long getId() {
             return id;
         }
 
@@ -348,7 +349,7 @@ public class UserPlayList extends BaseModel {
             this.tags = tags;
         }
 
-        public static class CreatorBean {
+        public static class CreatorBean implements Serializable{
             /**
              * defaultAvatar : true
              * province : 210000

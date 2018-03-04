@@ -120,7 +120,7 @@ public class TestActivity extends AppCompatActivity {
         };
     }
 
-    private void playListDetail(String id){
+    private void playListDetail(long id){
         new RequestMaker<PlayListDetail>(context, ServiceFactory.getPlayListService().detail(id)){
             @Override
             protected void onSuccess(PlayListDetail playListDetail) {

@@ -24,7 +24,7 @@ public interface PlayListService {
      * 作用：获取歌单详情
      */
     @GET("playlist/detail")
-    Call<PlayListDetail> detail(@Query("id") String id);
+    Call<PlayListDetail> detail(@Query("id") long id);
 
     /**
      * 作用：添加或删除歌单歌曲
